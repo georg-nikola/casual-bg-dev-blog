@@ -1,9 +1,11 @@
 import CatalogItem from "./CatalogItem/CatalogItem";
 const Catalog = () => {
     return (
+      <div className="container mb80">
         <div className="page-timeline">
             <CatalogItem/>
         </div>
+      </div>
     );
 };
 
