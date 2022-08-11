@@ -24,3 +24,12 @@ This project is a simple web blog to demonstrate my skills in react.
 1. Stateless & state full components, bound form, synthetic events, component styling, etc.
 1. Communication with a remote server
 1. React for client-side
+
+## How to start and use locally
+
+1. Clone repo
+1. Use npm start to start the dev server
+1. Play around
+
+## How to access the web app online
+Stay tuned...
