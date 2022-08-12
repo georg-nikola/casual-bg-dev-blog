@@ -13,9 +13,9 @@ function Header() {
         <Container>
           <Navbar.Brand as={Link} to="/">Home</Navbar.Brand>
           <Nav className="me-auto">
+            <Nav.Link as={Link} to="/catalog">Blogs</Nav.Link>
             {user.email
               ? <>
-                <Nav.Link as={Link} to="/catalog">Catalog</Nav.Link>
                 <Nav.Link as={Link} to="/create">Create Blog</Nav.Link>
                 <Nav.Link as={Link} to="/logout">Logout</Nav.Link>
               </>
