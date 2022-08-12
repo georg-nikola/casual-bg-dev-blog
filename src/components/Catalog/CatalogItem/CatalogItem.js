@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom'
 import { Button } from 'react-bootstrap';
+import Moment from 'react-moment';
 
 const CatalogItem = ({ blog }) => {
     return (
@@ -8,21 +9,10 @@ const CatalogItem = ({ blog }) => {
             <i className="fa fa-image" />
           </div>
           <div className="vtimeline-block">
-            <span className="vtimeline-date">June 25, 2020</span>
+          <Moment className="vtimeline-date" format="YYYY/MM/DD">{blog._createdOn}</Moment>
             <div className="vtimeline-content">
               <img src={blog.img} alt=''/>
                 <h3>{blog.title}</h3>
-              <ul className="post-meta list-inline">
-                <li className="list-inline-item">
-                  <i className="fa fa-user-circle-o" /> <a href="#">John Doe</a>
-                </li>
-                <li className="list-inline-item">
-                  <i className="fa fa-calendar-o" /> <a href="#">25 June 2020</a>
-                </li>
-                <li className="list-inline-item">
-                  <i className="fa fa-tags" /> <a href="#">Bootstrap4</a>
-                </li>
-              </ul>
               <p>
                 {blog.description}
               </p>

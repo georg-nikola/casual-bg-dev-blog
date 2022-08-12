@@ -20,7 +20,7 @@ const CreateBlog = () => {
 
     return (
         <Form onSubmit={onSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3" controlId="formBasicTitle">
             <Form.Label>Title</Form.Label>
             <Form.Control name='title' type="title" placeholder="Enter title" />
             </Form.Group>
