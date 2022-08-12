@@ -15,6 +15,7 @@ import CreateBlog from './components/CreateBlog/CreateBlog'
 import BlogDetails from './components/BlogDetails/BlogDetails';
 import EditBlog from './components/EditBlog/EditBlog';
 import BlogOwner from './components/common/BlogOwner';
+import PrivateRoute from './components/common/PrivateRoute';
 
 import './App.css';
 
@@ -30,7 +31,9 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/logout' element={<Logout />} />
+            <PrivateRoute>
+              <Route path='/logout' element={<Logout />} />
+            </PrivateRoute>
             <Route path='/create' element={<CreateBlog />} />
             <Route element={<BlogOwner />}>
               <Route path='/catalog/:blogId/edit' element={<EditBlog />} />
