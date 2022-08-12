@@ -29,17 +29,17 @@ export const BlogProvider = ({
     const navigate = useNavigate();
     const [blogs, dispatch] = useReducer(blogReducer, []);
 
-    useEffect(() => {
-        blogService.getAll()
-            .then(result => {
-                const action = {
-                    type: 'ADD_BLOGS',
-                    payload: result
-                };
+    // useEffect(() => {
+    //     blogService.getAll()
+    //         .then(result => {
+    //             const action = {
+    //                 type: 'ADD_BLOGS',
+    //                 payload: result
+    //             };
 
-                dispatch(action);
-            });
-    }, []);
+    //             dispatch(action);
+    //         });
+    // }, []);
 
     const selectBlog = (blogId) => {
         return blogs.find(x => x._id === blogId) || {};
