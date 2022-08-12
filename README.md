@@ -33,4 +33,6 @@ This project is a simple web blog to demonstrate my skills in react.
 1. Play around
 
 ## How to access the web app online
-Stay tuned...
+1. Clone repo
+1. Start server locally, for reference use https://github.com/softuni-practice-server/softuni-practice-server
+1. https://casual-bg-dev-blog.web.app/
