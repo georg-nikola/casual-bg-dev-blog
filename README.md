@@ -29,6 +29,7 @@ This project is a simple web blog to demonstrate my skills in react.
 
 1. Clone repo
 1. Use npm start to start the dev server
+1. Start practice server for reference use https://github.com/softuni-practice-server/softuni-practice-server
 1. Play around
 
 ## How to access the web app online
