@@ -1,32 +1,33 @@
-import styles from './Header.module.css'
+import { Link } from 'react-router-dom'
 
-const Header = () => {
-    return (
-        <header>
-        <nav>
-          <ul>
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">Blogs</a>
-            </li>
-            <li>
-              <a href="#">Add blog</a>
-            </li>
-            <li>
-              <a href="#">Login</a>
-            </li>
-            <li>
-              <a href="#">Register</a>
-            </li>
-            <li>
-              <a href="#">Logout</a>
-            </li>
-          </ul>
-        </nav>
-      </header>      
-    );
-};
+import { useAuthContext } from '../../contexts/AuthContext';
 
-export default Header
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+
+function Header() {
+  const { user } = useAuthContext();
+  return (
+      <Navbar bg="light" variant="light">
+        <Container>
+          <Navbar.Brand as={Link} to="/">Home</Navbar.Brand>
+          <Nav className="me-auto">
+            {user.email
+              ? <>
+                <Nav.Link as={Link} to="/catalog">Catalog</Nav.Link>
+                <Nav.Link as={Link} to="/create">Create Blog</Nav.Link>
+                <Nav.Link as={Link} to="/logout">Logout</Nav.Link>
+              </>
+              : <>
+                <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                <Nav.Link as={Link} to="/register">Register</Nav.Link>
+              </>
+            }
+          </Nav>
+        </Container>
+      </Navbar>
+  );
+}
+
+export default Header;

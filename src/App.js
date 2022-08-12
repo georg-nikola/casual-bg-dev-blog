@@ -2,32 +2,41 @@ import { Routes, Route } from 'react-router-dom';
 
 import Catalog from './components/Catalog/Catalog'
 import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+
+import { AuthProvider } from './contexts/AuthContext';
+import { BlogProvider } from './contexts/BlogContext';
+
+
+import Home from './components/Home/Home';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register'
+import Logout from './components/Logout/Logout';
+import CreateBlog from './components/CreateBlog/CreateBlog'
 
 import './App.css';
-import Home from './components/Home/Home';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <main id="main-content">
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Home />} />
-        <Route path='/register' element={<Home />} />
-        <Route path='/logout' element={<Home />} />
-        <Route path='/create' element={<Home />} />
-        <Route path='/blogs/:blogId/edit' element={<Home />} />
-        <Route path='/catalog' element={<Home />} />
-        <Route path='/catalog/:gameId' element={<Home />} />
+    <AuthProvider>
 
-      </Routes>
-      <Catalog/>
-      </main>
-      
-      <Footer/>
-    </div>
+      <div className="App">
+        <Header/>
+      <BlogProvider>
+        <main id="main-content">
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/logout' element={<Logout />} />
+            <Route path='/create' element={<CreateBlog />} />
+            <Route path='/blogs/:blogId/edit' element={<Home />} />
+            <Route path='/catalog' element={<Catalog />} />
+            <Route path='/catalog/:gameId' element={<Home />} />
+          </Routes>
+        </main>
+      </BlogProvider>
+      </div>
+    </AuthProvider>
   );
 }
 

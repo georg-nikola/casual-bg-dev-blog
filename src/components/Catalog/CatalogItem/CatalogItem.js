@@ -1,5 +1,7 @@
+import {Link} from 'react-router-dom'
+import { Button } from 'react-bootstrap';
 
-const CatalogItem = () => {
+const CatalogItem = ({ blog }) => {
     return (
         <div className="vtimeline-point">
           <div className="vtimeline-icon">
@@ -8,16 +10,8 @@ const CatalogItem = () => {
           <div className="vtimeline-block">
             <span className="vtimeline-date">June 25, 2020</span>
             <div className="vtimeline-content">
-              <a href="#">
-                <img
-                  src="https://via.placeholder.com/700x400"
-                  alt=""
-                  className="img-fluid mb20"
-                />
-              </a>
-              <a href="#">
-                <h3>Standard post title</h3>
-              </a>
+              <img src={blog.img} alt=''/>
+                <h3>{blog.title}</h3>
               <ul className="post-meta list-inline">
                 <li className="list-inline-item">
                   <i className="fa fa-user-circle-o" /> <a href="#">John Doe</a>
@@ -30,15 +24,12 @@ const CatalogItem = () => {
                 </li>
               </ul>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec
-                nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur
-                libero. Morbi dapibus porta quam laoreet placerat.
+                {blog.description}
               </p>
               <br />
-              <a href="#" className="btn btn-outline-secondary btn-sm">
+              <Button as={Link} to={`/catalog/${blog._id}`}>
                 Read More
-              </a>
+              </Button>                
             </div>
           </div>
         </div>

@@ -1,16 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-body{
+/* body{
     font-family: 'Quicksand', sans-serif;
-}
-
-a{
-    text-decoration: none;
-}
-
-li{
-    list-style-type: none;
-}
+} */
 
 header{
     display: flex;
@@ -26,32 +18,22 @@ header{
     font-weight: 900;
 }
 
-nav ul{
+nav{
     display: flex;
     flex-direction: row;
 }
 
-nav ul li{
+nav :link{
     margin-left: 5px;
     margin-right: 5px;
 }
-nav ul li a{
+nav :link {
     color: #FFF;
     display: block;
     padding: 10px 20px;
     border-radius: 1px;
 }
 
-nav ul li a:hover{
+nav :link:hover {
     color: #DC7633;
-}
-
-.cta{
-    background-color: #DC7633;
-    color: #FFF;
-}
-
-.cta:hover{
-    background-color: #D35400;
-    color: #FFF;
 }
