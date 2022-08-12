@@ -31,10 +31,12 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
+            <Route path='/logout' element={<Logout />} />
+            <Route path='/create' element={
             <PrivateRoute>
-              <Route path='/logout' element={<Logout />} />
+              <CreateBlog />
             </PrivateRoute>
-            <Route path='/create' element={<CreateBlog />} />
+            } />
             <Route element={<BlogOwner />}>
               <Route path='/catalog/:blogId/edit' element={<EditBlog />} />
             </Route>
