@@ -12,16 +12,13 @@ const Home = () => {
       lang: 'en',
       unit: 'metric',
     });
-    console.log(data, isLoading, errorMessage)
     return (
       <>
         <Card>
           <Card.Body>
             <Card.Title>Casual blog</Card.Title>
             <Card.Text>
-              To access the main content, please register.
-
-              <Nav.Link as={Link} to="/register">Register</Nav.Link>
+              If you are not interested in this app, please accept a simple weather widget as an appology.
             </Card.Text>
           </Card.Body>
         </Card>
