@@ -29,18 +29,6 @@ export const BlogProvider = ({
     const navigate = useNavigate();
     const [blogs, dispatch] = useReducer(blogReducer, []);
 
-    // useEffect(() => {
-    //     blogService.getAll()
-    //         .then(result => {
-    //             const action = {
-    //                 type: 'ADD_BLOGS',
-    //                 payload: result
-    //             };
-
-    //             dispatch(action);
-    //         });
-    // }, []);
-
     const selectBlog = (blogId) => {
         return blogs.find(x => x._id === blogId) || {};
     };
@@ -52,25 +40,6 @@ export const BlogProvider = ({
             blogId,
         })
     }
-
-    // const addComment = (blogId, comment) => {
-    //     dispatch({
-    //         type: 'ADD_LIKE',
-    //         payload: comment,
-    //         blogId
-    //     });
-    //     // setBlogs(state => {
-    //     //     const blog = state.find(x => x._id == blogId);
-
-    //     //     const comments = blog.comments || [];
-    //     //     comments.push(comment)
-
-    //     //     return [
-    //     //         ...state.filter(x => x._id !== blogId),
-    //     //         { ...blog, comments },
-    //     //     ];
-    //     // });
-    // };
 
     const blogAdd = (blogData) => {
         dispatch({
